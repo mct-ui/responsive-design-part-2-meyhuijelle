@@ -197,8 +197,10 @@ a:focus {
   display: flow-root;
 }
 
-.o-row-neutral-x-light {
-  background: #f7f7f7;
+/* color modifiers */
+
+.o-row--neutral-x-light {
+  background-color: #f7f7f7;
 }
 
 /* size modifiers */
