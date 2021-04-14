@@ -226,6 +226,12 @@ a:focus {
   }
 }
 
+.o-row--gradient {
+  background: linear-gradient(to top right, #5051db 0%, #3887f7 100%);
+  /* background: linear-gradient(to bottom, #333 0%, #eee 100%); Fx 10+, Op 11.6+, Ch 26+, IE 10 */
+  color: white;
+}
+
 /*
     Objects: Container
     ---
@@ -487,6 +493,22 @@ Transtion-timing-function bepaalt welke easing moet toegepast worden. */
 }
 
 .c-link-cta:hover::after {
+}
+
+/* inversed */
+
+.c-link-cta--inverse,
+.c-link-cta--inverse:visited,
+.c-link-cta--inverse:active {
+  color: #fff;
+}
+
+.c-link-cta--inverse::after {
+  background-color: #fff;
+}
+
+.c-link-cta--inverse:hover::after {
+  background-color: #fff;
 }
 
 /*
