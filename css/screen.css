@@ -595,6 +595,59 @@ Transtion-timing-function bepaalt welke easing moet toegepast worden. */
   }
 }
 
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+.c-footer {
+}
+
+.c-footer__logo {
+}
+
+.c-footer__nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .c-footer {
+  }
+
+  .c-footer__logo {
+  }
+
+  .c-footer__nav {
+  }
+}
+
+@media (min-width: 992px) {
+  .c-footer {
+    /* display: flex; */
+  }
+
+  .c-footer__logo {
+    /* flex: just; */
+  }
+
+  .c-footer__logo .c-logo {
+  }
+
+  .c-footer__nav_links {
+    display: block;
+    justify-content: flex-start;
+    flex-basis: 100%;
+    align-items: flex-start;
+  }
+  .c-footer__nav_rechts {
+    display: block;
+    justify-content: flex-end;
+    flex-basis: 100%;
+    align-items: flex-end;
+  }
+}
+
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
