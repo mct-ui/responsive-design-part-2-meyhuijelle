@@ -375,6 +375,7 @@ a:focus {
 
 .o-section {
   display: flow-root;
+  /* dit is zodat margin colapsing verholpen wordt. */
 }
 
 .o-section + .o-section {
@@ -420,6 +421,75 @@ a:focus {
 }
 
 /*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+  position: relative;
+  /* Position: relative zorgt er voor dat als we position: absolute willen gebruiken dit tov dit element is. */
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 4px 0;
+  transition: color 0.175s ease-in;
+  /* display: inline-block zorgt er voor dat de link de breedte inneemt van tekst maar toch block styles kan krijgen zoals padding.
+transition: color .175s ease-in zorgt ervoor dat de animatie gebeurt. */
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+  color: #7373f5;
+}
+/* .c-link-cta::after { */
+/* Je kan met deze pseudo-elementen alles doen in CSS die je met andere elementen ook kan. Het enige verschil: De content bestaat niet in de DOM. */
+/* content: ' and more';
+  transform: scaleX(1);
+  background-color: #3e3ea8;
+
+} */
+.c-link-cta::before {
+  /* Je kan met deze pseudo-elementen alles doen in CSS die je met andere elementen ook kan. Het enige verschil: De content bestaat niet in de DOM. */
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+
+  background-color: #7373f5;
+  transform: scaleX(0.5);
+  transform-origin: left;
+  transition-property: transform background-color;
+  transition-duration: 0.175s;
+  transition-timing-function: ease-in;
+
+  /* Transform: scaleX(.5) zorgt ervoor dat het element voor de helft herschaald wordt op de X as.
+Transform-origin: left; zorgt er voor dat de transform links begint. Zet dit eens in commentaar om te zien wat het verschil is.
+Transition-property bepaalt welke properties geanimeerd zullen worden.
+Transition-duration bepaalt hoe lang de animatie moet duren
+Transtion-timing-function bepaalt welke easing moet toegepast worden. */
+}
+
+.c-link-cta::after {
+  /* Je kan met deze pseudo-elementen alles doen in CSS die je met andere elementen ook kan. Het enige verschil: De content bestaat niet in de DOM. */
+  transform: scaleX(2);
+  background-color: #3e3ea8;
+}
+
+.c-link-cta:hover {
+  color: #3e3ea8;
+}
+
+.c-link-cta:hover::after {
+}
+
+/*
     Component: Logo
     ---
     Website main logo
@@ -438,6 +508,24 @@ a:focus {
     height: 40px;
   }
 }
+
+/* component lead */
+
+.c-lead {
+  font-weight: 200;
+}
+
+.c-lead--lg {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.c-lead--xxl {
+  font-size: 36px;
+  line-height: 48px;
+}
+
+/* end component lead */
 
 /*
     Component: Nav
@@ -517,6 +605,24 @@ a:focus {
 
 .u-mb-sm {
   margin-bottom: 16px !important;
+}
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-primary-light {
+  color: #7373f5 !important;
+}
+
+.u-color-primary-base {
+  color: #5051db !important;
+}
+
+.u-color-primary-dark {
+  color: #3e3ea8 !important;
 }
 
 /*
